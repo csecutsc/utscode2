@@ -1,6 +1,6 @@
 # UTSCode2
 
-This is the official repository for the UTSCode 2017 contest. This repository holds all the tools, problem statements written in LaTeX, and solutions written in Python3 or C++.
+This is the official repository for the UTSCode 2018 contest. This repository holds all the tools, problem statements written in LaTeX, and solutions written in Python3 or C++.
 
 ## Installing
 
