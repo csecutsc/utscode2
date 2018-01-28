@@ -8,3 +8,4 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 40 --slave /u
 sudo update-alternatives --config gcc
 sudo apt-get -y install python-pkg-resources libboost-regex-dev debhelper libgmp3-dev automake autoconf texlive texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra texlive-lang-cyrillic texlive-lang-english tidy ghostscript
 sudo pip2 install pytest pyyaml plastex
+sudo pip2 install pip install git+https://github.com/kattis/problemtools
