@@ -24,4 +24,4 @@ To test problems, run
 $ vagrant ssh
 ```
 
-Problems will be under utscode2 where you can run all of `problemtools` provided by Kattis.
+Problems will be under `utscode2` where you can run all Kattis [problemtools](https://github.com/Kattis/problemtools).
