@@ -15,3 +15,13 @@ From there, spin up a VM with the Vagrantfile by running:
 ```
 $ vagrant up
 ```
+
+## Running
+
+To test problems, run
+
+```
+$ vagrant ssh
+```
+
+Problems will be under utscode2 where you can run all of `problemtools` provided by Kattis.
