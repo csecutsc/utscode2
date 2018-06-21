@@ -14,9 +14,7 @@ We're aiming for 10-11 problems for this contest, with the following categories:
 * (optional) 1 Binary Search/Math related
 
 ## Current Roles/Tasks 
-* Jason - 1 No brainer, 1 DP
-* Ousmane - 1 No brainer, 1 Greedy
-* William - 1 Network Flow, 1 DP
+See document here: https://docs.google.com/document/d/18LI4jaOwslHWBfpBN2zWVbUkADRhnumL7wZKf7m76Ds/edit?usp=sharing
 
 **Make sure** that when you're done writing a problem you have someone **proofread** it before the actual contest.
 
