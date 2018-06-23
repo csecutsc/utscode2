@@ -1,0 +1,39 @@
+Fab Party
+---------
+
+You'd like to throw the most fab party of all time for all of your friends! You have a list of N (1 <= N <= 500) potential people to invite, and you may choose to invite any (possibly empty) subset of them.
+
+The ith person contributes A_i (|A_i| <= 10^9) fabness to the party if they come. Note that this value can be negative - some people are no fun at all! The overall fabness of the party will be the sum of these values for the people who show up to the party.
+
+However, the ith person also has a list of M_i (0 <= M_i <= 10) distinct people whose company they greatly enjoy, the jth of whom is person F_{i,j} on your list (1 <= F_{i,j} <= N, F_{i,j} != i). Each person will refuse to go to your party unless all of the people on their list also come! Note that person A being on person B's list does not necessarily mean that person B is on person A's list.
+
+Given that you can invite any subset of people to the party as long as their requirements are all met (that is, for each person that is invited, all of the people on their list are also invited), what's the maximum overall fabness that your party can have? Furthermore, what are the minimum and maximum subset sizes that yield this maximum fabness value?
+
+Input format:
+
+Line 1: N
+Next N lines: A_i, M_i, and F_{i,1..M_i}, for i=1..N
+
+Output Format:
+
+3 integers, the maximum fabness of your party, the minimum number of invitees which can yield that fabness, and the maximum number of invitees which can yield that fabness.
+
+Sample input:
+
+7
+10 2 2 3
+-3 0
+-4 1 2
+-50 1 7
+-2 0
+1 1 5
+50 1 4
+
+Sample output:
+
+3 3 5
+
+Sample Explanation:
+
+The smallest subset of people to invite which yields the maximum fabness of 3 is {1, 2, 3}.
+The largest optimal subset is {1, 2, 3, 4, 7}.

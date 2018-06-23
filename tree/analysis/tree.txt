@@ -1,0 +1,1 @@
+DP[n][h] = probability that a BST with n nodes has height h. You can compute DP[n][h] based on DP[0..(n-1)][0..h] in O(N^3) time if you make careful use of DP[n][...] prefix sums. All left subtree sizes from 0..(n-1) are equally likely.

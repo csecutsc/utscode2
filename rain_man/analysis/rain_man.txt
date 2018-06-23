@@ -1,0 +1,23 @@
+Our solution will be based on a triple of parameters (x, d, y). We'll start by using x length-6 primes, and then deduct d digits in total from them (by shortening some of them to having fewer digits), such that d <= 5x. We'll then also use y 2s and y 5s.
+
+The number of primes will be x + 2y, and the number of digits in their product will be 6x - d + y. Note that if we always use the smallest prime of each length, more than enough of them (hundreds or thousands) can be multiplied together without their product overflowing to take up an additional digit. Also note that each 2x5 pair will increase the number of digits in the product by exactly 1.
+
+This suggests the following equality which must be satisfied with our choice of (x, d, y):
+
+  N = x + 2y = 6x - d + y
+  
+This can be rewritten to yield:
+  
+  y = 5x - d
+  N = 11x - 2d
+  
+We can then simply choose the smallest value of x such that 11x >= N and 11x - N is even, compute the corresponding values of d and y, and output the list of primes which these parameters represent.
+
+Smallest prime of each length:
+
+  1: 2
+  2: 11
+  3: 101
+  4: 1009
+  5: 10007
+  6: 100003
