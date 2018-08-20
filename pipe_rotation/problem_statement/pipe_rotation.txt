@@ -1,46 +1,80 @@
 Pipe Rotation
 -------------
 
-There's a grid with R rows and C columns (1 <= R, C <= 200). The cell in row r and column c contains one of 4 things (identified by a letter G_{r,c} between "A" and "D"), and can be rotated by any multiple of 90 degrees:
+There's a grid with R rows and C columns (1 <= R, C <= 100). The cell in row r and column c contains one of 4 things (identified by a letter G_{r,c} between "A" and "D"), and can be rotated by any multiple of 90 degrees:
 
-  - A: Nothing - 1 possible rotation
-  - B: A straight pipe (with pipes leaving through 2 opposite edges) - 2 possible rotations
-  - C: An elbow-shaped pipe (with pipes leaving through 2 adjacent edges) - 4 possible rotations
-  - D: A four-way pipe (with pipes leaving through all 4 edges) - 1 possible rotation
+  - A: Nothing
+  - B: A straight pipe (with pipes leaving through 2 opposite edges)
+  - C: An elbow-shaped pipe (with pipes leaving through 2 adjacent edges)
+  - D: A four-way pipe (with pipes leaving through all 4 edges)
+  
+  [pipe_rotation_1.png]
 
 Determine whether or not it's possible to rotate the cells such that the pipes all line up with one another. In particular, for each edge shared by a pair of adjacent cells, there must either be a pipe on both sides of that edge, or on neither side. And for each each of the 2*(R+C) outer edges of the grid, there must be no pipe leaving through that edge.
 
+Example grid specification with R=3 and C=4:
+
+  CBCA
+  BCDC
+  CCCC
+
+Example invalid grid:
+
+  [pipe_rotation_2.png]
+
+Example valid grid:
+
+  [pipe_rotation_3.png]
+
 Input Format:
+
+The first line contains 1 integer, T (1 <= T <= 50), the number of test cases. Then, for each test case:
 
 Line 1: 2 integers, R and C
 Next R lines: C characters, G_{i,1..C}, for i=1..R
 
 Output Format:
 
-1 string, either "Possible" if it's possible to line up the pipes, or "Impossible" otherwise
+For each test case:
 
-Sample Input 1:
+1 string, either "Possible" if it's possible to produce a valid grid, or "Impossible" otherwise
 
+Sample Input:
+
+5
 2 2
 CC
 CC
-
-Sample Output 1:
-
-Possible
-
-Sample Input 2:
-
 2 2
 CC
 CB
+3 3
+CCC
+CCC
+CCC
+3 4
+CBCA
+BCDC
+CCCC
+5 2
+CC
+CC
+AA
+CC
+CC
 
-Sample Output 2:
+Sample Output:
 
+Possible
 Impossible
+Impossible
+Possible
+Possible
 
-Sample Explanations:
+Sample Explanation:
 
-In the first case, the 4 elbow-shaped pipes may be rotated to line up with one another in a single closed loop. That's the only valid way to rotate the cells.
+In the first case, the following valid grid may be produced:
+
+  [pipe_rotation_4.png]
 
 In the second case, no matter how the cells are rotated, one of the ends of the straight pipe (in the bottom-right corner) will always leave through an outer of the grid, which is invalid.
