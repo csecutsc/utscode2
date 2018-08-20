@@ -1,0 +1,15 @@
+source: UTSCode 2
+source_url: https://csec.club
+author: Brian Chen
+license: cc by-sa
+
+limits:
+    time_multiplier: 1
+#    time_safety_margin: 2
+#    memory: 4096
+#    output: 16
+#    compilation_time: 240
+#    validation_time: 240
+#    validation_memory: 3072
+#    validation_output: 4
+#validator: space_change_sensitive float_absolute_tolerance 1e-6
