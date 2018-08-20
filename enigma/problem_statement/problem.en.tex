@@ -1,0 +1,19 @@
+\problemname{Enigma}
+\illustration{.5}{team}{Left to right: John Cairncross, Alan Turing, Joan Clarke,  Hugh Alexander, Photo by \href{https://www.flickr.com/photos/bagogames/15410046164}{flickr}}
+
+
+\noindent \href{https://www.imdb.com/title/tt2084970/}{The Imitation Game}, a 2014 film, based in 1939 during WW2, follows the newly created British intelligence agency MI6 as they recruit a Cambridge mathematics alumnus Alan Turing to crack Enigma Machine -- which cryptanalysts had thought unbreakable. By the end of the film, Alan turing with the help of his team (to the right) manage to break the enigma code, and ultimately winning the war for the allies by using \href{https://rss.onlinelibrary.wiley.com/doi/pdf/10.1111/j.1740-9713.2010.00424.x}{bayesian statistics} to figure out the best strategy for utilising the information from the decrypted messages. \\
+\\
+
+\noindent If you've seen the film, you would know that Alan Turing didn't crack the code on his own (brilliant as he is), he required help from his carefully selected colleagues. But how did he select them? He placed crosswords puzzles all over great britain, hoping intelligent people would be able to solve them and be given a special test to further evaluate their candidacy.  \\
+
+
+\noindent Today we will have you solving some of these crossword puzzles in hopes that you could be a part of this famous team. \\
+
+\section*{Input}
+
+The first line of the input will contain the integers R and C ($1 \leq R,C \leq 21$), denoting the row and columns in the crossword grid. The next R rows will have a width of C columns, containing the grid of the unsolved crossword. A "#" represents a void space (i.e. a space where no letters may be placed) and a "." represents an empty space, where a letter should be placed. The following line will contain the integer N (1 ≤ N ≤ 200). The next N lines will contain the words, in no particular order, that must be placed either horizontally OR vertically on the grid.
+
+
+\section*{Output}
+Like a normal crossword, words are only valid when read left-right or up-down. Words must start and end either on the edge of the grid or before/after a void space. Each word will only contain the uppercase letters A through Z. You may assume that there will only be one possible solution for every test case, and that all words will be at least 2 letters long.
