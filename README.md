@@ -32,6 +32,7 @@ From there, spin up a VM with the Vagrantfile by running:
 ```
 $ vagrant up
 ```
+auth will fail for some reason, so just do vagrant ssh after, and use vagrant as password
 
 ## Running
 
