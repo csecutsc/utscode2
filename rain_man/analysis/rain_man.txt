@@ -1,23 +1,3 @@
-Our solution will be based on a triple of parameters (x, d, y). We'll start by using x length-6 primes, and then deduct d digits in total from them (by shortening some of them to having fewer digits), such that d <= 5x. We'll then also use y 2s and y 5s.
+2^N has at most N digits, and 11^N has at least N digits. We can observe that there must be at least one valid solution of the form 2^x * 11^(N-x), for some x such that 0 <= x <= N (it's impossible for there to be a value of y for which x = y yields many digits while x = y + 1 yields too few). We can try all possible values of x, compute the exact product for each one (which requires big integer multiplication, which is built into some languages, and may be manually implemented in others), and check whether if has exactly N digits. We could also binary search on x, though that's unnecessary given the constraints.
 
-The number of primes will be x + 2y, and the number of digits in their product will be 6x - d + y. Note that if we always use the smallest prime of each length, more than enough of them (hundreds or thousands) can be multiplied together without their product overflowing to take up an additional digit. Also note that each 2x5 pair will increase the number of digits in the product by exactly 1.
-
-This suggests the following equality which must be satisfied with our choice of (x, d, y):
-
-  N = x + 2y = 6x - d + y
-  
-This can be rewritten to yield:
-  
-  y = 5x - d
-  N = 11x - 2d
-  
-We can then simply choose the smallest value of x such that 11x >= N and 11x - N is even, compute the corresponding values of d and y, and output the list of primes which these parameters represent.
-
-Smallest prime of each length:
-
-  1: 2
-  2: 11
-  3: 101
-  4: 1009
-  5: 10007
-  6: 100003
+We can use logarithmic math to compute the number of digits in each product sufficiently accurately, without the need for exact big integer multiplication. In particular, the number of digits in the product of a list of values is equivalent to the sum of base-10 logarithms of those values (rounded up to the nearest integer).

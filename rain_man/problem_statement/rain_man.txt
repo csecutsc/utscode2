@@ -5,28 +5,31 @@ Given an integer N (1 <= N <= 1000), output any list of N (possibly non-distinct
 
 Input Format:
 
+The first line contains 1 integer, T (1 <= T <= 50), the number of test cases. Then, for each test case:
+
 Line 1: 1 integer, N
 
 Output Format:
 
+For each test case:
+
 N integers, a list of primes whose product has exactly N digits.
 
-Sample Input 1:
-
-1
-
-Sample Output 1:
-
-5
-
-Sample Input 2:
+Sample Input:
 
 2
+1
+2
 
-Sample Output 2:
+Sample Output:
 
+5
 3 7
 
-Sample Explanations:
+Sample Explanation:
 
-In the first case, the product is simply 5, which has the required digit count of 1. In the second case, the product is 3 * 7 = 21, which has the required digit count of 2. Note that various other outputs would also be accepted for each case.
+In the first case, the product is simply 5, which has the required digit count of 1.
+
+In the second case, the product is 3 * 7 = 21, which has the required digit count of 2.
+
+Note that various other outputs would also be accepted for each case.
