@@ -13,8 +13,8 @@ def put_to_file(r, d, fil, out):
 
 for i in range(30):
     if i > 10:
-        r = randint(0, 2**31 - 1)
-        d = randint(0, 2**31 - 1)
+        r = randint(0, 10**9 - 1)
+        d = randint(0, 10**9 - 1)
     else:
         r = randint(0, 2**8)
         d = randint(0, 2**8)
