@@ -1,0 +1,8 @@
+source: UTSCode Contest 2018
+source_url: https://utscode.com
+author: Jacob Plachta 
+license: cc by-sa
+
+limits:
+    time_multiplier: 3
+    validation: default

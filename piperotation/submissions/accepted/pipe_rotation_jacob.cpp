@@ -96,54 +96,52 @@ int main()
 	bool r,d;
 	char G[LIM][LIM];
 	bool right[LIM][LIM],down[LIM][LIM];
-	Read(T);
-		while (T--)
+	Read(R),Read(C);
+		Fox(i,R)
+			scanf("%s",&G[i]);
+	Fill(right,0);
+	Fill(down,0);
+	Fox(i,R)
+	{
+		Fox(j,C)
 		{
-			Read(R),Read(C);
-				Fox(i,R)
-					scanf("%s",&G[i]);
-			Fill(right,0);
-			Fill(down,0);
-				Fox(i,R)
-					Fox(j,C)
-					{
-						r=j ? right[i][j-1] : 0;
-						d=i ? down[i-1][j] : 0;
-							if (G[i][j]=='A')
-							{
-									if ((r) || (d))
-										goto Imp;
-								right[i][j]=down[i][j]=0;
-							}
-							if (G[i][j]=='B')
-							{
-									if (r==d)
-										goto Imp;
-								right[i][j]=r;
-								down[i][j]=d;
-							}
-							if (G[i][j]=='C')
-							{
-								right[i][j]=!r;
-								down[i][j]=!d;
-							}
-							if (G[i][j]=='D')
-							{
-									if ((!r) || (!d))
-										goto Imp;
-								right[i][j]=down[i][j]=1;
-							}
-					}
-				Fox(i,R)
-					if (right[i][C-1])
-						goto Imp;
-				Fox(j,C)
-					if (down[R-1][j])
-						goto Imp;
-			printf("Possible\n");
-			continue;
-Imp:;
-			printf("Impossible\n");
+			r=j ? right[i][j-1] : 0;
+			d=i ? down[i-1][j] : 0;
+				if (G[i][j]=='A')
+				{
+						if ((r) || (d))
+							goto Imp;
+					right[i][j]=down[i][j]=0;
+				}
+				if (G[i][j]=='B')
+				{
+						if (r==d)
+							goto Imp;
+					right[i][j]=r;
+					down[i][j]=d;
+				}
+				if (G[i][j]=='C')
+				{
+					right[i][j]=!r;
+					down[i][j]=!d;
+				}
+				if (G[i][j]=='D')
+				{
+						if ((!r) || (!d))
+							goto Imp;
+					right[i][j]=down[i][j]=1;
+				}
 		}
+	}
+	Fox(i,R)
+		if (right[i][C-1])
+			goto Imp;
+	Fox(j,C)
+		if (down[R-1][j])
+			goto Imp;
+	printf("Possible\n");
+	return(0);
+Imp:;
+	printf("Impossible\n");
 	return(0);
 }
