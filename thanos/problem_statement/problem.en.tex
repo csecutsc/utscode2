@@ -1,16 +1,15 @@
 \problemname{Thanos}
 
-\noindent Dr. Thanos, a data scientist and a self-described nihilist, recently published a paper titled "The Snapping Point of the Universe: Why Rates of Population Growth Points toward Imminent Destruction". In his paper, Thanos explains that in many planets, the increasing population count is leading to a diminished quality of life. He is convinced that his findings can lead to sweeping reforms in intergalactic law, and lead to a better life for all lifeforms.\\
+\noindent Dr. Thanos, data scientist and self-described nihilist, recently published a paper titled \textit{The snapping point of the universe: why rates of population growth point towards imminent destruction}. In his paper, Thanos explains that in many planets, the increasing population count is leading to a diminished quality of life. He is convinced that his findings will drive sweeping reforms in intergalactic law, leading to a better life for all organisms.\\
 
-\noindent Thanos turns to you, his confidant, and asks that you do some investigation for him so that he has some examples to point to when he presents his findings to the Association of VENGE's Research Society. The society, one of the galatic leaders in egalitarianism and social justice, is holding a panel to discuss Thano's findings, and contemplate possible legislative moves, so Thanos is convinced that they are going to be a tough crowd. He asks you to investigate several datasets and see if they could be potentially helpful in supporting his argument.\\
+Thanos turns to you, his confidant, to do some investigation. He would like some concrete evidence for his findings to present to the Association of VENGE's Research Society. The society, one of the galatic leaders in egalitarianism and social justice, is holding a special panel to discuss Thano's findings. As this involves the chance of actual legislation being passed, Thanos is convinced that the panelists are going to be a tough sell. He asks you to investigate several datasets and see if they could be potentially helpful in supporting his argument.\\
 
-\noindent Thanos hands you information regarding several planets. On each file, you see the current population - $x$, population growth rate - $y$, and total annual resources produced for each planet - $z$. Given this information, your job is to find out the number of years the planet has left before the population is no longer sustainable on its resources. Assume that each person consumes one unit of resources per year, and that population will always need to be a whole number, rounded down.\\
-
-\noindent For each planetary study, Thanos desires to know the number of years it will take before the planet is no longer sustainable for its population\\
+Thanos hands you the data for several planets. On each planet's file, you see the planet's current population $P$, its population growth rate $R\%$ per year, and it's annual food production $F$ in tons. Assume that each individual consumes 1 ton of food per year, and that the population for each planet each year is always counted as a whole number, rounded down. Given this information, your task is to find out the number of years a planet has remaining before its population is no longer sustainable by its food production.
 
 \section*{Input}
-The input will be $n$+1 lines, the first line, $n$, describes the number of planets to analyze.
-The remaining $n$ lines each have single line consisting of 3 numbers; $x$, $y$, and $z$ where $1 \leq w, x, y, z \leq 2^{31} - 1$ where each is a metric of planetary study as described above.
+The first line of input consists of a single integer $N$, the number of planets that need to be analyzed.\\
+
+\noindent $N$ lines follow, the $i$th of which consists of three space-separated integers $P$ ($1 \leq P \leq 10^9$), $R$ ($1 \le R \le 500$), and $F$ ($1 \leq F \leq 10^9$), the metrics of planet $i$ as described above.
 
 \section*{Output}
-Output the number of years each planet has before it is no longer sustainable
+Print $N$ lines, the $i$th of which should consist of a single integer denoting the number of years the $i$th planet has before it is no longer sustainable.
