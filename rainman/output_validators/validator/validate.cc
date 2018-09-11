@@ -203,8 +203,8 @@ void check_case() {
       v.push_back(val);
     }
 
-    if (v.empty()) {
-      wrong_answer("Judge did not receive an answer for case %d\n", i);
+    if (v.size() != N) {
+      wrong_answer("Output must have %d values, received %d\n", N, v.size());
     }
 
     bigint curr(v[0]);
