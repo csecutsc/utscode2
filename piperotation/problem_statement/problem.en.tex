@@ -1,74 +1,42 @@
 \problemname{Pipe Rotation}
 
+\noindent The four ninja turtles: Leonardo, Donatello, Michelangelo, and Raphael are seeking a new home in Manhattan, New York City. The turtles don't like sudden dead-ends in their home. Fortunately, the government recently installed a new sewage system where pipes can be rotated! The turtles needs your help finding a suitable home, so they're willing to provide you a grid of the current layout of the sewage system.\\
 
-\noindent The four ninja turtles:  Leonardo, Donatello, Michelangelo, and Raphael 
-are seeking a new home in Manhatten, New York City. The turtles don't like sudden deadends 
-in their home. Fortunately the government recently installed a new sewage system where pipes 
-can be rotated! The turtles needs your help finding a suitable home so they're willing to provide you a grid 
-describing the current layout of the sewage system.  \\
+The grid consists of $R$ rows and $C$ columns. The cell $G_{r,c}$ will consist of one of four pipes, encoded as a letter between ``\texttt{A}" and ``\texttt{D}". These pipes can be rotated by any multiple of 90 degrees:\\
 
-\noindent The grid consists of R and C columns. The cell $G_{r,c}$ will be one of 4 pipes encoded as a 
-between "A" and "D". These pipes can be rotated by any multiple 
-of 90 degrees: \\
-
-\begin{minipage}{0.4\textwidth}
-  \includegraphics[width=.7\textwidth]{pipe_rotation_1.png} 
-\end{minipage} \hfill
-\begin{minipage}{0.6\textwidth}
+\noindent
+\begin{minipage}{0.25\textwidth}
+  \includegraphics[width=1\textwidth]{pipe_rotation_1.png}
+\end{minipage}
+\begin{minipage}{0.75\textwidth}
   \begin{itemize}
-    \item (A) Nothing
-    \item (B) Straight pipe (pipes leaving through 2 opposite edges)
-    \item (C) Elbow-shaped pipe (pipes leaving through 2 adjacent edges)
-    \item (D) Four-way pipe (pipes leaving through all 4 edges) 
+    \item (\texttt{A}) Nothing
+    \item (\texttt{B}) Straight pipe (pipes leaving through two opposite edges)
+    \item (\texttt{C}) Elbow-shaped pipe (pipes leaving through two adjacent edges)
+    \item (\texttt{D}) Four-way pipe (pipes leaving through all four edges)
   \end{itemize}
-\end{minipage} 
-\\ 
+\end{minipage}
+\vspace{10pt}
 
-
-\noindent Determine whether or not it's possible to rotate the cells such that the pipes all 
-line up with one another. In particular, for each edge shared by a pair of adjacent cells, 
-there must either be a pipe on both sides of that edge, or on neither side. 
-And for each each of the $2 \cdot (R+C)$ outer edges of the grid, there must be no pipe leaving through that edge. Below are examples:
-
+Determine whether it's possible to rotate the cells such that the pipes all line up with one another. In particular, for each edge shared by a pair of adjacent cells, there must either be a pipe on both sides of that edge, or on neither side. And for each each of the $2 \cdot (R + C)$ outer edges of the grid, there must be no pipe leaving through that edge. Below are examples:
 
 \begin{figure}[h]
   \centering
-  \begin{minipage}[t]{0.45\textwidth}\centering%
+  \begin{minipage}[t]{0.3\textwidth}\centering
       \includegraphics[width=\textwidth]{pipe_rotation_2}
-      \caption{invalid example, two sudden deadends}
-  \end{minipage} \hfill
-  \begin{minipage}[t]{0.45\textwidth}\centering%
-      \includegraphics[width=\textwidth]{pipe_rotation_3} 
-      \caption{valid example, no sudden deadends}
+      Fig 1. Invalid example,\\ two sudden dead-ends.
+  \end{minipage}
+  \hspace{30pt}
+  \begin{minipage}[t]{0.3\textwidth}\centering
+      \includegraphics[width=\textwidth]{pipe_rotation_3}
+      Fig 2. Valid example,\\ no sudden dead-ends.
   \end{minipage}
 \end{figure}
 
-% \begin{minipage}{0.4\textwidth}
-%   \includegraphics[width=\linewidth]{pipe_rotation_2.png} \hfill
-%   \caption{example invalid example}
-% \end{minipage} \hfill
-% 
-% \begin{minipage}{0.4\textwidth}
-%   \includegraphics[width=\linewidth]{pipe_rotation_3.png}
-%   \caption{example valid image}
-% \end{minipage}
-
-% \begin{figure}[h]
-%   \minipage{0.32\textwidth}
-%   \endminipage\hfill
-%   \minipage{0.32\textwidth}
-%   \endminipage\hfill
-%   \minipage{0.32\textwidth}%
-%     \caption{A really Awesome Image}\label{fig:awesome_image3}
-%   \endminipage
-% \end{figure}
-
-
-
-
 \section*{Input}
-Line 1: 2 integers, R and C \\
-Next R lines: C characters, $G_{i,1..C}$, for i=$1..R$ \\
+
+The first line of input consists of two space-separated integers, $R$ and $C$.\\
+$R$ lines follow, the $i$th of which consists of $C$ characters $G_{i,1}, G_{i,2}, \dots, G_{i,C}$ (for $i = 1..R$).
 
 \section*{Output}
-A string, either "Possible" if it's possible to produce a valid grid, or "Impossible" otherwise
+Print, on a single line, a single string, either ``\texttt{Possible}" if it's possible to produce a valid configuration of pipes, or ``\texttt{Impossible}" otherwise.
