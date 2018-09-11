@@ -2,7 +2,7 @@
 
 \noindent Dominick Cobb and Arthur are ``extractors" who perform corporate espionage. Using experimental military technology that gives them access to shared dream worlds, they infiltrate their targets' subconscious to extract valuable information. Cobb and his entourage are contacted by a mysterious Japanese syndicate and given a seemingly impossible task: instead of extracting information, do the opposite -- plant a new idea in the target's mind.\\
 
-Cobb just figured out how to calculate the slowness of time in each dream level, but he's still missing a vital piece of the plan -- the architecture. For this challenging mission he has hired the brilliant young architect Ariadne to design a dream space, complete with all the aesthetic and tactile details. Cobb's target will be brought into that dream space, where they will fill it with details from their own subconscious and memories.\\
+Cobb just figured out how to calculate the slowness of time in each dream level, but he still missing a vital piece of the plan -- the architecture. For this challenging mission he has hired the brilliant young architect Ariadne to design a dream space, complete with all the aesthetic and tactile details. Cobb's target will be brought into that dream space, where they will fill it with details from their own subconscious and memories.\\
 
 As extractors go into deeper dream levels, the perception of time slows down. This means subjects will be able to explore exponentially more space. Since dreams can go infinitely deep (onwards to Limbo), the architecture of a dream should be infinite in area. The master layout is denoted by a two-dimensional grid that starts at row 0, column 0, and extends infinitely downwards and to the right. Ariadne cannot simply draw a map of this space (since it is infinite), so she must come up with a program that "generates" the dream space to extend as large as the team needs to go deeper. She has an infinite number of building blocks, numbered 0, 1, 2, 3, 4, \dots, which must be used in that order.\\
 
@@ -29,10 +29,11 @@ In dream level 0 (reality), the dream space consists of the single block 0. With
 \end{minipage}
 \end{center}
 
-Ariadne's program must be able to generate any part of the map at will. Given only the row and column coordinates for a particular location in the dream space, can you determine the number of the building block that should be used?
+Ariadne's program must be able to generate any part of the map at will. Given only the row and column coordinates for a particular location in the dream space, can you determine the number of the building block that will beused?
 
 \section*{Input}
 The first and only line of input consists of two space-separated integers, $R$ and $C$ ($0 \leq R, C \leq 10^{9}$), specifying a particular row and column in the dream-space.
 
 \section*{Output}
-Print, on a single line, the number of the building block at coordinates $(R, C)$.
+Print, on a single line, the number of the building block at coordinates $(R, C)$.\\
+Note: this number can be large, and may not necessary fit in a 32-bit integer.
