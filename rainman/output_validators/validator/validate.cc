@@ -156,6 +156,23 @@ class bigint {
 };
 
 
+bool is_prime(int n) {
+  if (n == 2 || n == 3) {
+    return true;
+  }
+  if (n < 2 || n % 2 == 0 || n % 3 == 0) {
+    return false;
+  }
+  for (int i = 5, w = 4; i*i <= n; i += w) {
+    if (n % i == 0) {
+      return false;
+    }
+    w = 6 - w;
+  }
+  return true;
+}
+
+
 void check_case() {
   int T, N;
   assert(judge_in >> T);
@@ -178,7 +195,10 @@ void check_case() {
         wrong_answer("Invalid token detected in output: %s\n", token.c_str());
       }
       if (val < 1 || val > 1000000) {
-        wrong_answer("Output must be in [1, 10^6], received: %d\n", val);
+        wrong_answer("Outputs must be in [1, 10^6], received: %d\n", val);
+      }
+      if (!is_prime(val)) {
+        wrong_answer("Outputs must prime, received: %d\n", val);
       }
       v.push_back(val);
     }
