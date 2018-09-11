@@ -15,16 +15,20 @@ long long hibit(long long x) {
 }
 
 int main() {
-  long long r, c;
-  cin >> r >> c;
+  int T;
+  cin >> T;
+  for (int i = 0; i < T; i++) {
+    long long r, c;
+    cin >> r >> c;
 
-  long long hr = hibit(r);
-  long long hc = hibit(c);
+    long long hr = hibit(r);
+    long long hc = hibit(c);
 
-  if (hr >= hc) {
-    cout << 2*hr*hr + (r - hr)*hr + c << endl;
-  } else {
-    cout << hc*hc + (c - hc)*hc + r << endl;
+    if (hr >= hc) {
+      cout << 2*hr*hr + (r - hr)*hr + c << endl;
+    } else {
+      cout << hc*hc + (c - hc)*hc + r << endl;
+    }
   }
   return 0;
 }
