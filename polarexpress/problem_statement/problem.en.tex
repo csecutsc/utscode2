@@ -1,18 +1,18 @@
 \problemname{The Polar Express}
 
-\noindent You are the conductor of the Polar Express train. The Polar Express is a train with $N$ carts numbered $1$ to $200$. However, your train's carts are currently in a scrambled order! You cannot leave to pick up the children for Christmas unless you can reorganize the train in the sorted order. \\
+\noindent It's almost December, and the Polar Express is planning for its annual trip towards the North Pole. The Polar Express is a train with $N$ carts numbered $1$ to $N$, and you are the conductor! However, due to an exceptionally heavy snowstorm, your train recently ran into an accident and veered off-track. Now, the ordering of all of the carts have been scrambled! You cannot leave to pick up the children for Christmas unless you can reorganize the train in the original sorted order.\\
 
-Every day, you can move the first $K$ carts from the front of the train to a holding station, which is a stack. At night, the magical elves of the holding station will move the carts from the holding station to the back of the train, in reverse order. \\
+At the start of every hour, you can move the first $K$ carts from the front of the train to a holding station, which is a stack. At the end of every hour, the magical elves of the holding station will move the carts from the holding station to the back of the train, in reverse order.\\
 
-For example, say your train is currently ordered as follows: $1, 2, 5, 4, 3$. You can move the first 3 trains to the holding station. The next day, your train will be ordered as: $4, 3, 5, 2, 1$.
+For example, suppose the train is currently ordered $1, 2, 5, 4, 3$ from front to back. You can move the first three trains to the holding station. At the end of the hour, your carts will be returned to you, and the train will be ordered as $4, 3, 5, 2, 1$.\\
 
-Your job will give a sequence of instructions to sort the train, such that the train is configured with $1$ in front. However, you cannot take more than $1000$ days to complete your task.\\
+Your job is to come up with a sequence of instructions to sort the train, such that cart $1$ is at the front and cart $N$ is at the back. However, Christmas is in $1000$ hours and you cannot take longer than that to complete your task.
 
 \section*{Input}
 The first line of input consists of a single integer $N$ ($1 \leq N \leq 200$), specifying the number of carts that the train contains.\\
-$N$ lines follow, each of with consists of a single integer, together forming a permutation of the numbers from $1$ to $N$. This permutation specifies the initial order of the train carts.\\
+$N$ lines follow, each of with consists of a single integer, together forming a permutation of the numbers from $1$ to $N$. This permutation specifies the initial order of the train carts.
 
 \section*{Output}
 On the first line of output, print a single integer $M$, the number days it will take to sort the train.\\
-Next, print $N$ lines, the $i$th of which should consist of a single integer denoting the number of carts to move to the holding station on the $i$th day. Each integer printed must be within $1$to $N$.\\
+Print $M$ lines next, the $i$th of which should consist of a single integer denoting the number of carts to move to the holding station on the $i$th hour. Each integer printed must be between $1$ and $N$, inclusive.\\
 Your answer will be judged correct if $0 \leq M \leq 1000$, and your given sequence correctly sorts the train carts.
