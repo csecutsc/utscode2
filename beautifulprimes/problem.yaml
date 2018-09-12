@@ -1,0 +1,17 @@
+source: UTSCode Contest 2018
+source_url: https://csec.club
+author: Jacob Plachta
+license: cc by-sa
+
+validation: custom
+
+limits:
+    time_multiplier: 1
+#    time_safety_margin: 2
+#    memory: 4096
+#    output: 16
+#    compilation_time: 240
+#    validation_time: 240
+#    validation_memory: 3072
+#    validation_output: 4
+#validator: space_change_sensitive float_absolute_tolerance 1e-6
