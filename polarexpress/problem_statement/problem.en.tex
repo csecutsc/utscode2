@@ -1,6 +1,6 @@
 \problemname{The Polar Express}
 
-\noindent You are the conductor of the Polar Express train. The Polar Express is a train with N carts numbered $1$ to $200$. However, your train's carts are currently in a scrambled order! You cannot leave to pick up the children for Christmas unless you can reorganize the train in the sorted order. \\
+\noindent You are the conductor of the Polar Express train. The Polar Express is a train with $N$ carts numbered $1$ to $200$. However, your train's carts are currently in a scrambled order! You cannot leave to pick up the children for Christmas unless you can reorganize the train in the sorted order. \\
 
 Every day, you can move the first $K$ carts from the front of the train to a holding station, which is a stack. At night, the magical elves of the holding station will move the carts from the holding station to the back of the train, in reverse order. \\
 
@@ -9,13 +9,10 @@ For example, say your train is currently ordered as follows: $1, 2, 5, 4, 3$. Yo
 Your job will give a sequence of instructions to sort the train, such that the train is configured with $1$ in front. However, you cannot take more than $1000$ days to complete your task.\\
 
 \section*{Input}
-The first line of input consists of a single integer $N$ ($1 \leq N \leq 200$), specifying the number of carts that the train contains.
-The second line contains $N$ integers, giving a permutation of the numbers from $1$ to $N$. This permutation specifies the initial order of the train carts.\\
+The first line of input consists of a single integer $N$ ($1 \leq N \leq 200$), specifying the number of carts that the train contains.\\
+$N$ lines follow, each of with consists of a single integer, together forming a permutation of the numbers from $1$ to $N$. This permutation specifies the initial order of the train carts.\\
 
 \section*{Output}
-On the first line, print one integer $M$, the number days it will take to sort the train.
-
-On the second line, print $M$ integers, where the $i$-th number denotes the number of carts to move to the holding station on the $i$-th day. Each integer outputted must be within $1 .. N$.
-
-Your answer will be judged correct if $0 \leq M \leq 1000$, and the sequence of instructions on the second line correctly sorts the train carts. Each instruction
-
+On the first line of output, print a single integer $M$, the number days it will take to sort the train.\\
+Next, print $N$ lines, the $i$th of which should consist of a single integer denoting the number of carts to move to the holding station on the $i$th day. Each integer printed must be within $1$to $N$.\\
+Your answer will be judged correct if $0 \leq M \leq 1000$, and your given sequence correctly sorts the train carts.

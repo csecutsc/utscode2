@@ -21,7 +21,7 @@ void op(vector<int>& a, vector<int>& moves, int n, int k) {
 
 	vector<int> ret(n);
 	for (int i = 0; i < k; i++) {
-		ret[k-i-1] = a[i]; 
+		ret[k-i-1] = a[i];
 	}
 	for (int i = k+1; i < n; i++) {
 		ret[i-1] = a[i];
@@ -53,6 +53,6 @@ int main () {
 	}
 
 	cout << moves.size() << endl;
-	for (auto& x : moves) cout << x << " ";
+	for (auto& x : moves) cout << x << endl;
 	cout << endl;
 }
