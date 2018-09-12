@@ -1,0 +1,9 @@
+source: UTSCode 2
+source_url: https://csec.club
+author: Ben Zhang
+license: cc by-sa
+
+validation: custom
+
+limits:
+    time: 2
