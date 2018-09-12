@@ -8,9 +8,8 @@ As extractors go into deeper dream levels, the perception of time slows down. Th
 
 In dream level 0 (reality), the dream space consists of the single block 0. With each deeper dream level, the area of the space dream doubles. To prevent the dream space collapsing in on itself from growing too narrow in a single direction, Ariadne has designed the space to double in ``alternating directions", with new blocks filling in the space sequentially based on the direction of doubling. For example, the first few levels of the dream map are depicted as follows:\\
 
-\begin{center}\ttfamily\sbox{0}{a}
-\begin{minipage}{45\wd0}
-\begin{verbatim}
+\centering
+\begin{BVerbatim}
     0          0 1         0 1       0 1 4 6
                            2 3       2 3 5 7
 
@@ -25,9 +24,7 @@ In dream level 0 (reality), the dream space consists of the single block 0. With
 
    (Level 4)                (Level 5)
 
-\end{verbatim}
-\end{minipage}
-\end{center}
+\end{BVerbatim}
 
 Ariadne's program must be able to generate any part of the map at will. Given only the row and column coordinates for a particular location in the dream space, can you determine the number of the building block that will beused?
 
@@ -37,4 +34,4 @@ $T$ lines follow, each of which is a test case consisting of two space-separated
 
 \section*{Output}
 For each test case, print, on a separate line, the number of the building block at coordinates $(R, C)$.\\
-Note: the answer can be large, and may not necessary fit in a 32-bit integer.
+Note: the answer can be large, and may not necessary fit in a 32-bit integer.\\
