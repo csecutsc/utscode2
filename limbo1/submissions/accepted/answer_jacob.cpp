@@ -86,9 +86,12 @@ int main()
 {
 		if (DEBUG)
 			freopen("in.txt","r",stdin);
-	LL R,D;
-	cin >> R >> D;
-	LL d=R+D-1;
-	cout << d*(d-1)/2+R << endl;
+	int T;
+	for (int i = 0; i < T; i++) {
+		LL R,D;
+		cin >> R >> D;
+		LL d=R+D-1;
+		cout << d*(d-1)/2+R << endl;
+	}
 	return(0);
 }
