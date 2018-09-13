@@ -87,6 +87,7 @@ int main()
 		if (DEBUG)
 			freopen("in.txt","r",stdin);
 	int T;
+	cin >> T;
 	for (int i = 0; i < T; i++) {
 		LL R,D;
 		cin >> R >> D;

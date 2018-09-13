@@ -2,13 +2,13 @@ from random import randint
 
 def put_to_file(r, d, fil, out):
     with open(fil, 'w') as f:
-        f.seek(0,0)
+        f.seek(0, 0)
         f.write(str(r) + ' ' + str(d) + '\n')
         f.close()
 
     with open(out, 'w') as f:
-        f.seek(0,0)
-        f.write(str(int(r * (r + 1) / 2 + (d -1)*r + (d - 2)*(d - 1) / 2)) + '\n')
+        f.seek(0, 0)
+        f.write(str(r*(r + 1)//2 + r*(d - 1) + (d - 2)*(d - 1)//2) + '\n')
         f.close()
 
 for i in range(30):
