@@ -3,35 +3,33 @@ from sys import stdin
 import re
 import sys
 
+integer = "(0|-?[1-9]\\d*)"
 
-line = stdin.readline()
-try:
-    R, C = map(int, line.strip().split())
-except ValueError as e:
-    assert(False)
-assert(1 <= R <= 100 and 1 <= C <= 100)
+line = sys.stdin.readline()
+assert re.match(integer + " " + integer + "\n", line), \
+    "'{}' is not a pair of integers".format(line)
 
-# check for valid characters
+R, C = map(int, line.split())
+assert 1 <= R <= 21, "R = {} is not in [1, 21]".format(R)
+assert 1 <= C <= 21, "C = {} is not in [1, 21]".format(C)
+
 grid = []
 for r in range(R):
-    line = stdin.readline().strip()
-    if not line:
-        assert(False)
-    valid_chars = ['#', '.'] 
-    for c in range(C):
-        if line[c] not in valid_chars:
-            assert(False)
-    grid.append(line)
+    line = stdin.readline()
+    assert re.match('(#|\\.){{{}}}'.format(C) + "\n", line), \
+        "Line must be consist of {} '#'s or '.'s. Got `{}`.".format(C, line)
+    grid.append(line.strip())
 
-N = int(stdin.readline())
-# check for alphanumeric words
+line = stdin.readline()
+assert re.match(integer + "\n", line), "N must be integer, got {}.".format(line)
+N = int(line)
+assert 1 <= N <= 200, "N = {} is not in [1, 200]".format(N)
+
 for i in range(N):
-    word = stdin.readline().strip()
-    assert(word.isalpha())
+    word = stdin.readline().rstrip("\n")
+    assert word.isupper() and word.isalpha(), "Word `{}` must be uppercase letters".format(word)
 
-# check for correct dimensions 
-assert(len(grid) == R)
-for line in grid:
-    assert(len(line) == C)
+assert len(sys.stdin.readline()) == 0, "Extra lines detected after input."
 
+# Nothing to report.
 sys.exit(42)
