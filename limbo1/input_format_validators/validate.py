@@ -3,17 +3,20 @@ from sys import stdin
 import re
 import sys
 
-integer = "(0|-?[1-9]\d*)"
-single_integer = re.compile(integer + '\n')
-two_int_first_line = re.compile(integer + " " + integer + "\n")
+integer = "(0|-?[1-9]\\d*)"
 
 line = stdin.readline()
-assert single_integer.match(line)
+assert re.match(integer + "\n", line), \
+    "Expected a single integer, got {}".format(line)
 
 for _ in range(int(line)):
-    n_line = stdin.readline()
-    assert two_int_first_line.match(n_line)
-    r, d = map(int, n_line.split())
-    assert 1 <= r <= 10**9 and 1 <= d <= 10**9
+    line = stdin.readline()
+    assert re.match(integer + " " + integer + "\n", line), \
+        "Expected a pair of integers, got {}.".format(line)
+    R, D = map(int, line.split())
+    assert 1 <= R <= 10**9, "R = {} must be in [1, 10^9]".format(R)
+    assert 1 <= D <= 10**9, "D = {} must be in [1, 10^9]".format(D)
+
+assert len(sys.stdin.readline()) == 0, "Extra lines detected after input."
 
 sys.exit(42)
