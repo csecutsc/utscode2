@@ -17,7 +17,7 @@ grid = []
 for r in range(R):
     line = stdin.readline()
     assert re.match('(x|\\.){{{}}}'.format(C) + "\n", line), \
-        "Line must be consist of {} '#'s or '.'s. Got `{}`.".format(C, line)
+        "Line must be consist of {} 'x's or '.'s. Got `{}`.".format(C, line)
     grid.append(line.strip())
 
 assert len(sys.stdin.readline()) == 0, "Extra lines detected after input."

@@ -3,29 +3,24 @@ from sys import stdin
 import re
 import sys
 
+integer = "(0|-?[1-9]\\d*)"
 
-line = stdin.readline()
-try:
-    R, C = map(int, line.strip().split())
-except ValueError as e:
-    assert(False)
-assert(1 <= R <= 100 and 1 <= C <= 100)
+line = sys.stdin.readline()
+assert re.match(integer + " " + integer + "\n", line), \
+    "'{}' is not a pair of integers".format(line)
 
-# check for valid characters
+R, C = map(int, line.split())
+assert 1 <= R <= 2000, "R = {} is not in [1, 2000]".format(R)
+assert 1 <= C <= 2000, "C = {} is not in [1, 2000]".format(C)
+
 grid = []
 for r in range(R):
-    line = stdin.readline().strip()
-    if not line:
-        assert(False)
-    valid_chars = ['A', 'B', 'C', 'D'] 
-    for c in range(C):
-        if line[c] not in valid_chars:
-            assert(False)
-    grid.append(line)
+    line = stdin.readline()
+    assert re.match('[ABCD]{{{}}}'.format(C) + "\n", line), \
+        "Line must be consist of {} chars from A-D. Got `{}`.".format(C, line)
+    grid.append(line.strip())
 
-# check for correct dimensions 
-assert(len(grid) == R)
-for line in grid:
-    assert(len(line) == C)
+assert len(sys.stdin.readline()) == 0, "Extra lines detected after input."
 
+# Nothing to report.
 sys.exit(42)
