@@ -1,18 +1,16 @@
 #!/usr/bin/env python3
-import sys
 import re
+import sys
 
 integer = "(0|-?[1-9]\\d*)"
-
 MAX = 1000
-
-cases = 0
 
 line = sys.stdin.readline()
 assert re.match(integer + "\n", line), "'{}' is not an int".format(line)
 T = int(line)
 assert 1 <= T <= 50, "T = {} is not in [1, 50]".format(n, MAX)
 
+cases = 0
 while True:
     line = sys.stdin.readline()
     if len(line) == 0:
