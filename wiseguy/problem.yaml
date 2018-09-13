@@ -13,4 +13,5 @@ limits:
 #    validation_memory: 3072
 #    validation_output: 4
 
-validator: float_absolute_tolerance 1e-5
+validation: default
+validator_flags: float_tolerance 1e-5
