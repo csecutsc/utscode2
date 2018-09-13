@@ -1,16 +1,10 @@
-import sys
+#!/usr/bin/env python3
+T = int(input())
 
-n = int(input())
-
-for i in range(n):
-    line = sys.stdin.readline()
-
-    metrics = line.rstrip().split(" ")
-    pop = int(metrics[0])
-    grow = float(metrics[1])
-    food = float(metrics[2])
+for i in range(T):
+    pop, rate, food = map(int, input().strip().split(' '))
     years = 0
-    while(pop <= food):
-        pop = int(pop * (1 + (grow/100)))
+    while pop <= food:
+        pop = int(pop*(1 + (rate/100)))
         years += 1
     print(years)
