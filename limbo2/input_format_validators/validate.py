@@ -16,8 +16,8 @@ for _ in range(int(line)):
     assert re.match(integer + " " + integer + "\n", line), \
         "Expected a pair of integers, got {}.".format(line)
     R, D = map(int, line.split())
-    assert 1 <= R <= 10**9, "R = {} must be in [1, 10^9]".format(R)
-    assert 1 <= D <= 10**9, "D = {} must be in [1, 10^9]".format(D)
+    assert 0 <= R <= 10**9, "R = {} must be in [0, 10^9]".format(R)
+    assert 0 <= D <= 10**9, "D = {} must be in [0, 10^9]".format(D)
 
 assert len(sys.stdin.readline()) == 0, "Extra lines detected after input."
 
