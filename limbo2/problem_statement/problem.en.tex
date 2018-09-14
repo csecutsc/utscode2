@@ -6,7 +6,7 @@ Cobb just figured out how to calculate the slowness of time in each dream level,
 
 As extractors go into deeper dream levels, the perception of time slows down. This means subjects will be able to explore exponentially more space. Since dreams can go infinitely deep (onwards to Limbo), the architecture of a dream should be infinite in area. The master layout is denoted by a two-dimensional grid that starts at row 0, column 0, and extends infinitely downwards and to the right. Ariadne cannot simply draw a map of this space (since it is infinite), so she must come up with a program that "generates" the dream space to extend as large as the team needs to go deeper. She has an infinite number of building blocks, numbered 0, 1, 2, 3, 4, \dots, which must be used in that order.\\
 
-In dream level 0 (reality), the dream space consists of the single block 0. With each deeper dream level, the area of the space dream doubles. To prevent the dream space collapsing in on itself from growing too narrow in a single direction, Ariadne has designed the space to double in ``alternating directions", with new blocks filling in the space sequentially based on the direction of doubling. For example, the first few levels of the dream map are depicted as follows:\\
+In dream level 0 (reality), the dream space consists of the single block 0. With each deeper dream level, the area of the space doubles. To prevent the dream space from implosion due to growing too narrowly in a single direction, Ariadne has designed the space to double in \textit{alternating directions}, with new blocks filling in the space sequentially based on the direction of doubling. For example, the first few levels of the dream map are depicted as follows:\\
 
 \begin{center}
 \begin{minipage}{8cm}
@@ -15,7 +15,6 @@ In dream level 0 (reality), the dream space consists of the single block 0. With
                            2 3       2 3 5 7
 
 (Reality)   (Level 1)   (Level 2)   (Level 3)
-
 
 
    0  1  4  6         0  1  4  6 16 20 24 28
@@ -29,10 +28,10 @@ In dream level 0 (reality), the dream space consists of the single block 0. With
 \end{minipage}
 \end{center}
 
-Ariadne's program must be able to generate any part of the map at will. Given only the row and column coordinates for a particular location in the dream space, can you determine the number of the building block that will beused?
+Ariadne's program must be able to generate any part of the map at will. Given only the row and column coordinates for a particular location in the dream space, can you determine the number of the building block that will be used?
 
 \section*{Input}
-The first line of input consists of a single integer $T$ ($1 \leq T \leq 100$), the number of test cases.
+The first line of input consists of a single integer $T$ ($1 \leq T \leq 100$), the number of test cases.\\
 $T$ lines follow, each of which is a test case consisting of two space-separated integers, $R$ and $C$ ($0 \leq R, C \leq 10^{9}$), specifying a particular row and column in the dream-space.\\
 
 \section*{Output}
