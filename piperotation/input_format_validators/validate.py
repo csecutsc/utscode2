@@ -10,8 +10,8 @@ assert re.match(integer + " " + integer + "\n", line), \
     "'{}' is not a pair of integers".format(line)
 
 R, C = map(int, line.split())
-assert 1 <= R <= 2000, "R = {} is not in [1, 2000]".format(R)
-assert 1 <= C <= 2000, "C = {} is not in [1, 2000]".format(C)
+assert 1 <= R <= 100, "R = {} is not in [1, 100]".format(R)
+assert 1 <= C <= 100, "C = {} is not in [1, 100]".format(C)
 
 grid = []
 for r in range(R):
