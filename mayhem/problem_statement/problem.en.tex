@@ -1,8 +1,10 @@
 \problemname{Mayhem}
 
-\noindent Project Mayhem is a secret organization of former Fight Club members, banded together as an army to bring down consumerism and corporate America. To completely destabilize modern civilization, Tyler Durden and his Project Mayhem trainees are making plans to blow up the buildings of major banks that hold everybody's credit information. If they are successful, then everybody will get to restart life from a blank slate, free of all debts ranging from mortgages to student loans. They plan to do so by setting off pipe bombs under major financial buildings.\\
+\noindent You are a seasoned Fight Club member who recently stumbled upon the classified plans of Project Mayhem, a secret organization that the other members have created to bring down consumerism and corporate America. To completely destabilize modern civilization, Tyler Durden and his Project Mayhem trainees are making plans to take down the buildings of major banks that hold everybody's credit information. If they succeed, then everybody is supposed to restart life with a blank slate, free of all debts ranging from mortgages to student loans.\\
 
-Tyler and his crew have mapped out the city's financial district on a rectangular grid with $R$ rows and $C$ columns. Each grid cell either has a building (denoted by ``\texttt{x}") or does not (denoted by ``\texttt{.}"). Tyler can blow up the buildings in any order he wants, with only one catch. At any time a building is being taken down, there must be at least one other building standing in either the same row or the same column. This is so that Tyler and his crew have somewhere on the same street or avenue immediately after the explosion to take shelter, and to avoid being caught. After that however, they can then travel to anywhere else on the map to take down another building (provided the same condition is met).\\
+Tyler plans to do so by setting off pipe bombs under major financial buildings. His crew has mapped out the city's financial district on a rectangular grid with $R$ rows and $C$ columns. Each grid cell either has a building armed with bombs to detonate (denoted by ``\texttt{x}") or does not (denoted by ``\texttt{.}"). As a friend of Tyler, you know all too well that his plan is off the chains. Violence is never the solution. You want to do your best to thwart the plan by visiting the buildings one by one and disarming as many bombs as possible.\\
+
+You can disarm the buildings in any order, with only one catch. After you disarm a building, Tyler's crew will find out, chase after you, and occupy that building indefinitely. To avoid getting caught, you must immediately find another (armed) building in the same street or avenue to take cover before disarming other buildings. After that however, you can go to any other armed building on the map to disarm it (provided the same condition is met). In other words, at any time you disarm a building, there must be at least one other armed building in either the same row or the same column.\\
 
 \noindent Take the following $3$ by $3$ map for example:
 
@@ -12,19 +14,19 @@ Tyler and his crew have mapped out the city's financial district on a rectangula
      x.x
 \end{verbatim}
 
-\noindent Tyler has a few ways to demolish up to $2$ buildings:
+\noindent You have a few ways to disarm up to $2$ buildings:
 \begin{itemize}
-\item He can first take down the top-left one, followed by either of the bottom two buildings, for a total of $2$ buildings.
-\item He can first take down the bottom-right one, followed by either of the remaining two leftmost buildings, for a total of $2$ buildings.
-\item However, note that if he chooses to first demolish the bottom-left building, then none of the remaining buildings can be demolished. So he'll only be able to demolish a single building in this case.
+\item You can first disarm the top-left one, followed by either of the bottom two buildings, for a total of $2$ buildings.
+\item You can first disarm the bottom-right one, followed by either of the remaining two leftmost buildings, for a total of $2$ buildings.
+\item However, note that if you choose to first disarm the bottom-left building, then none of the remaining buildings can be disarmed (since you won't be able to take cover afterwards). So in this case, you would only be able to disarm a single building.
 \end{itemize}
-In all of these cases, the center building can never be demolished since there is no immediate neighboring building in its row or column to use as refuge.\\
+In any of these cases, the center building can never be disarmed since there is no immediate neighboring building in its row or column to use for cover from Tyler's henchmen.\\
 
-Please help Tyler determine the maximum number of buildings that can be demolished.
+Given a map of the city, you would like to know the maximum number of buildings that can be disarmed.
 
 \section*{Input}
 The first line of input consists of two space-separated integers $R$ and $C$ ($1 \le R, C \le 2\,000$).\\
 $R$ lines follow, each of which consists of $C$ characters (either ``\texttt{x}" or ``\texttt{.}"), specifying the grid of the financial district.
 
 \section*{Output}
-Print, on a single line, the maximum number of buildings that can be demolished.\\
+Print, on a single line, the maximum number of buildings that can be disarmed.\\
