@@ -4,7 +4,7 @@
 
 Tyler and his crew have mapped out the city's financial district on a rectangular grid with $R$ rows and $C$ columns. Each grid cell either has a building (denoted by ``\texttt{x}") or does not (denoted by ``\texttt{.}"). Tyler can blow up the buildings in any order he wants, with only one catch. At any time a building is being taken down, there must be at least one other building standing in either the same row or the same column. This is so that Tyler and his crew have somewhere on the same street or avenue immediately after the explosion to take shelter, and to avoid being caught. After that however, they can then travel to anywhere else on the map to take down another building (provided the same condition is met).\\
 
-\noindent Take the following 3 by 3 map for example:
+\noindent Take the following $3$ by $3$ map for example:
 
 \begin{verbatim}
      x..
@@ -12,10 +12,10 @@ Tyler and his crew have mapped out the city's financial district on a rectangula
      x.x
 \end{verbatim}
 
-\noindent Tyler has a few ways to demolish up to 2 buildings:
+\noindent Tyler has a few ways to demolish up to $2$ buildings:
 \begin{itemize}
-\item He can first take down the top-left one, followed by either of the bottom two buildings, for a total of 2 buildings.
-\item He can first take down the bottom-right one, followed by either of the remaining two leftmost buildings, for a total of 2 buildings.
+\item He can first take down the top-left one, followed by either of the bottom two buildings, for a total of $2$ buildings.
+\item He can first take down the bottom-right one, followed by either of the remaining two leftmost buildings, for a total of $2$ buildings.
 \item However, note that if he chooses to first demolish the bottom-left building, then none of the remaining buildings can be demolished. So he'll only be able to demolish a single building in this case.
 \end{itemize}
 In all of these cases, the center building can never be demolished since there is no immediate neighboring building in its row or column to use as refuge.\\
@@ -23,7 +23,7 @@ In all of these cases, the center building can never be demolished since there i
 Please help Tyler determine the maximum number of buildings that can be demolished.
 
 \section*{Input}
-The first line of input consists of two space-separated integers $R$ and $C$ ($1 \le R, C \le 2000$).\\
+The first line of input consists of two space-separated integers $R$ and $C$ ($1 \le R, C \le 2\,000$).\\
 $R$ lines follow, each of which consists of $C$ characters (either ``\texttt{x}" or ``\texttt{.}"), specifying the grid of the financial district.
 
 \section*{Output}
