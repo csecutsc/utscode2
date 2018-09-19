@@ -89,10 +89,10 @@ int main()
 	int T;
 	cin >> T;
 	for (int i = 0; i < T; i++) {
-		LL R,D;
-		cin >> R >> D;
-		LL d=R+D-1;
-		cout << d*(d-1)/2+R << endl;
+		LL L, R;
+		cin >> L >> R;
+		LL d = R + L + 1;
+		cout << d*(d-1)/2 + R + 1 << endl;
 	}
 	return(0);
 }

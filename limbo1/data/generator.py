@@ -1,24 +1,28 @@
-from random import randint
+#!/usr/bin/env python3
+from random import randint, shuffle
 
-def put_to_file(r, d, fil, out):
-    with open(fil, 'w') as f:
-        f.seek(0, 0)
-        f.write(str(r) + ' ' + str(d) + '\n')
-        f.close()
+def genfile(data, infile, outfile):
+    with open(infile, 'w') as f:
+        f.write('{}\n'.format(len(data)))
+        for l, r in data:
+            f.write(str(l) + ' ' + str(r) + '\n')
 
-    with open(out, 'w') as f:
-        f.seek(0, 0)
-        f.write(str(r*(r + 1)//2 + r*(d - 1) + (d - 2)*(d - 1)//2) + '\n')
-        f.close()
+    with open(outfile, 'w') as f:
+        for l, r in data:
+            f.write(str(l*(l - 1)//2 + l*(r + 1) + (r + 1)*(r + 2)//2) + '\n')
 
-for i in range(30):
-    if i > 10:
-        r = randint(0, 10**9 - 1)
-        d = randint(0, 10**9 - 1)
-    else:
-        r = randint(0, 2**8)
-        d = randint(0, 2**8)
-    put_to_file(r, d, 'secret/{testcase}.in'.format(testcase=i), 'secret/{testcase}.ans'.format(testcase=i))
+genfile([(1, 2), (2, 3), (5, 8)],
+        'sample/{}.in'.format(1), 'sample/{}.ans'.format(1))
 
-put_to_file(3, 2, 'sample/{testcase}.in'.format(testcase=1), 'sample/{testcase}.ans'.format(testcase=1))
-put_to_file(5, 8, 'sample/{testcase}.in'.format(testcase=2), 'sample/{testcase}.ans'.format(testcase=2))
+data = [(0, 0), (0, 1), (0, 2), (0, 10**9), (1, 0), (1, 1), (1, 2), (1, 10**9),
+        (2, 0), (2, 1), (2, 2), (2, 10**9), (10**9, 0), (10**9, 1), (10**9, 2),
+        (10**9, 10**9)]
+T = 100
+for i in range(T - len(data)):
+    exponent = randint(0, 9)
+    l = randint(0, 10**exponent)
+    r = randint(0, 10**exponent)
+    data.append((l, r))
+
+shuffle(data)
+genfile(data, 'secret/{}.in'.format(2), 'secret/{}.ans'.format(2))

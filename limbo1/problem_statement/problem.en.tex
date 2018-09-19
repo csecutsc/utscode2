@@ -4,21 +4,23 @@
 
 Cobb notes that when using dream-sharing technology, time slows down by different factors depending on whose dream is being entered. Their target is to convince Cepshun, the heir of an energy conglomerate, to dissolve his father's company. Before Cobb starts, he notes that it would be important to figure out the passage of time to ensure that the operation can be completed smoothly.\\
 
-In Cepshun's dreams, there are multiple different layers of consciousness, each of which controls a different area of Cepshun's dreams and memories. Cobb needs to move between several dreams to reach his destination dream -- some of them belonging to Cepshun, and some of them belonging to his entourage. He notes that entering the dream of the host allows his gang to move downwards a level, while entering a dream that isn't Cepshun's allows them to move rightwards. The factor by which time slows down for each level forms a rather unusual pattern:
+In Cepshun's dreams, there are multiple different layers of consciousness, each of which controls a different area of Cepshun's dreams and memories. Cobb needs to move between several dreams to reach his destination dream -- some of them belonging to Cepshun, and some of them belonging to his entourage. The factor by which time slows down on each level is best visualized by all of the positive integers arranged in an infinite triangle, where the first row has the single integer $1$, the second row has the next two integers, the third row has the next three, and so forth. The first $4$ levels are depicted below:
 
 \begin{verbatim}
-   1 3 6 10 ...
-   2 5 9 ...
-   4 8 ...
-   7 ...
-   ...
+      1
+     2 3
+    4 5 6
+   7 8 9 10
+    etc...
 \end{verbatim}
 
-\noindent Cobb wants to know the slowness of time inside his target dream, given how far they need to travel rightwards, $R$, and downwards, $D$.
+The initial time factor for reality is $1$. To enter the next dream level, Cobb can either descend left (into a dream by Cepshun) or right (into a dream by his Entourage). For example, if he descends right, left, right, then he'll end up at dreams with time factors of $3$, then $5$, and finally $9$. Note the interesting property that for any pair of whole numbers $L$ and $R$, Cobb will always end up on the same time factor if he moves left $L$ times total and right $R$ times total, regardless of the order in which he makes them.\\
+
+Cobb wants to know the slowness of time inside his target dream, which he can reach by descending left $L$ times and right $R$ times.
 
 \section*{Input}
 The first line of input consists of a single integer $T$ ($1 \leq T \leq 100$), the number of test cases.\\
-$T$ lines follow, each of which is a test case consisting of two space-separated integers, $R$ and $D$ ($1 \leq R, D \leq 10^{9}$), specifying how far right and how far down the target dream is.
+$T$ lines follow, each of which is a test case consisting of two space-separated integers, $L$ and $R$ ($0 \leq L, R \leq 10^{9}$), specifying the number of times Cobb needs to descend left and right, respectively.
 
 \section*{Output}
 Print, on a single line, the factor by which time slows down in the target dream.\\
