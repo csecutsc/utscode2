@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 N = int(input())
 O = [int(input()) for _ in range(N)]
 ans = []
