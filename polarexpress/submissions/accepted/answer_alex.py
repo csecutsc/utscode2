@@ -25,4 +25,5 @@ while True:
     move(O.index(e + 1) + 1)
 
 print(len(ans))
-print('\n'.join(map(str, ans)))
+for num in ans:
+    print(num)
