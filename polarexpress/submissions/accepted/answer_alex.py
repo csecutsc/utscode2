@@ -22,4 +22,5 @@ while True:
     move(O.index(1) + 1)
     move(O.index(e + 1) + 1)
 
-print(len(ans) + '\n' + '\n'.join(map(str, ans)))
+print(len(ans))
+print('\n'.join(map(str, ans)))
