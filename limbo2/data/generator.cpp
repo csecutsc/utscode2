@@ -30,7 +30,7 @@ string name(int num, string ext) {
 
 /*** GENERATOR ***/
 
-vector<int> vals{0, 1, 2, 4, 5, 8, 1000, 65534, 1048575, 33554432, 536870911, 536870912, 1000000000};
+vector<int> vals{0, 1, 2, 4, 8, 1000, 65534, 1048575, 33554432, 536870911, 536870912, 1000000000};
 
 void gen() {
   vector<pair<int, int>> cases;
@@ -45,6 +45,12 @@ void gen() {
       }
     }
   }
+  while (cases.size() < 100) {
+    int a = rand(0, 1e9);
+    int b = rand(0, 1e9);
+    cases.push_back(make_pair(a, b));
+  }
+  random_shuffle(cases.begin(), cases.end());
   ofstream fout(name(2, ".in").c_str());
   assert(cases.size() <= 100);
   fout << cases.size() << endl;
@@ -56,17 +62,31 @@ void gen() {
 
 /*** SOLVER ***/
 
-long long hibit(long long x) {
-  if (x == 0) {
+long long solve(long long R, long long C) {
+  if (R == 0 && C == 0) {
     return 0;
   }
-  x >>= 1;
-  long long ret = 1;
-  while (x > 0) {
-    x >>= 1;
-    ret <<= 1;
+  long long W = 1, H = 1;
+  bool d = false;
+  while (R >= H || C >= W) {
+    if (!d) {
+      W *= 2;
+    } else {
+      H *= 2;
+    }
+    d = !d;
   }
-  return ret;
+  long long ans = W*H / 2;
+  if (d) {
+    W /= 2;
+    C -= W;
+    ans += C*H + R;
+  } else {
+    H /= 2;
+    R -= H;
+    ans += R*W + C;
+  }
+  return ans;
 }
 
 int main() {
@@ -81,16 +101,12 @@ int main() {
     ofstream fout(name(num, ".ans").c_str());
     int T;
     fin >> T;
-    for (int i = 0; i < T; i++) {
+    for (int i = 1; i <= T; i++) {
       long long r, c;
       fin >> r >> c;
-      long long hr = hibit(r);
-      long long hc = hibit(c);
-      if (hr >= hc) {
-        fout << 2*hr*hr + (r - hr)*hr + c << endl;
-      } else {
-        fout << hc*hc + (c - hc)*hc + r << endl;
-      }
+      long long ans = solve(r, c);
+      fout << ans << endl;
+      cout << "Case " << i << ": (" << r << ", " << c << ") -> " << ans << endl;
     }
     fin.close();
     fout.close();

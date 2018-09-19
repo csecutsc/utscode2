@@ -9,7 +9,7 @@ line = stdin.readline()
 assert re.match(integer + "\n", line), \
     "Expected a single integer, got {}".format(line)
 T = int(line)
-assert 1 <= T <= 100, "T = {} is not in [1, 50]".format(n, MAX)
+assert 1 <= T <= 100, "T = {} is not in [1, 100]".format(n, MAX)
 
 for _ in range(int(line)):
     line = stdin.readline()
