@@ -1,6 +1,5 @@
 #include <algorithm>
 #include <bitset>
-#include <cassert>
 #include <iostream>
 #include <set>
 #include <vector>
@@ -19,17 +18,15 @@ string l[200];
 bool b[200];
 string a[25];
 vector<node> v;
-set<string> sols;
 
 void recur(int p) {
-  //  if (f) return;
+  if (f) {
+    return;
+  }
   if (p == n) {
-    string sol;
     for (l0 = 0; l0 < h; l0++) {
-      sol += a[l0] + '\n';
+      cout << a[l0] << '\n';
     }
-    sols.insert(sol);
-    assert(sols.size() == 1);
     f = 1;
     return;
   }
@@ -59,7 +56,6 @@ void recur(int p) {
       }
     }
   }
-  return;
 }
 
 int main() {
@@ -101,5 +97,5 @@ int main() {
   }
   f = 0;
   recur(0);
-  return 42;
+  return 0;
 }
