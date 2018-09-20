@@ -24,6 +24,7 @@ for i in range(LIM + 1):
 T = int(input())
 for _ in range(T):
     N = int(input())
+    ans = 0
     for i in range(N):
         ans += i*dyn[N][i]
     print('{0:.9f}'.format(ans))
