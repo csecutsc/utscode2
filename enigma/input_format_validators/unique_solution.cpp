@@ -88,7 +88,6 @@ void rec(int i) {
       }
     }
   }
-  return 0;
 }
 
 int main() {
