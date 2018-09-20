@@ -31,8 +31,8 @@ string name(int num, string ext) {
 
 /*** GENERATOR ***/
 
-const int MAXR = 2000;
-const int MAXC = 2000;
+const int MAXR = 1000;
+const int MAXC = 1000;
 
 void gen(int num, int R, int C, double x_rate) {
   assert(0 <= x_rate && x_rate <= 1);
@@ -55,6 +55,7 @@ void gen(int num, int R, int C, double x_rate) {
 
 void gen(int num, const vector<string> &g) {
   int R = g.size(), C = g[0].size();
+  if (!(1 <= R && R <= MAXR)) {cout << R << " " << C << endl; return;}
   assert(1 <= R && R <= MAXR);
   assert(1 <= C && C <= MAXC);
   ofstream fout(name(num, ".in").c_str());
@@ -94,7 +95,7 @@ string rep(const string &s, int n) {
   return res;
 }
 
-vector<string> rep(const vector<string> &v, int n) {
+vector<string> repv(const vector<string> &v, int n) {
   vector<string> res;
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < (int)v.size(); j++) {
@@ -115,16 +116,16 @@ void gen() {
   gen(t++, 100, 100, 0.02);
   gen(t++, 100, 100, 0.80);
   gen(t++, 500, 500, 0.001);
-  gen(t++, rep({rep("x.", 1000), rep(".x", 1000)}, 1000));
-  gen(t++, rep({rep("x..", 333), rep(".x.", 333), rep("..x", 333)}, 333));
-  gen(t++, 1500, 1999, 0.0001);
-  gen(t++, 1999, 2000, 0.001);
-  gen(t++, 2000, 1999, 0.0015);
-  gen(t++, 2000, 2000, 0.9999);
-  gen(t++, 2000, 2000, 1.00);
-  gen_diag(t++, 2000, 2000, 4);
-  gen_diag(t++, 2000, 2000, 150);
-  gen_diag(t++, 2000, 2000, 1500);
+  gen(t++, repv({rep("x.", 500), rep(".x", 500)}, 1000));
+  gen(t++, repv({rep("x..", 333), rep(".x.", 333), rep("..x", 333)}, 150));
+  gen(t++, 900, 999, 0.0001);
+  gen(t++, 999, 1000, 0.001);
+  gen(t++, 1000, 999, 0.0015);
+  gen(t++, 1000, 1000, 0.9999);
+  gen(t++, 1000, 1000, 1.00);
+  gen_diag(t++, 1000, 1000, 4);
+  gen_diag(t++, 1000, 1000, 150);
+  gen_diag(t++, 1000, 1000, 1500);
 }
 
 /*** SOLVER ***/
