@@ -107,7 +107,7 @@ int main()
                 Fox(j,N)
                 {
                   p=j<i ? 2 : 11;
-                  ans += string(100000, '0') + to_string(p) + (j==N-1 ? '\n' : ' ');
+                  ans += string(1000, '0') + to_string(p) + (j==N-1 ? '\n' : ' ');
                 }
               break;
             }
