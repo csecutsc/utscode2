@@ -42,50 +42,53 @@ for j in range(C):
 def update_pointers(r, c):
     if lcol[r][c] != -1:
         if rcol[r][c] != -1:
-            rcol[r][lcol[r][c]] = rcol[r][c];
-            lcol[r][rcol[r][c]] = lcol[r][c];
+            rcol[r][lcol[r][c]] = rcol[r][c]
+            lcol[r][rcol[r][c]] = lcol[r][c]
         else:
-            rcol[r][lcol[r][c]] = -1;
+            rcol[r][lcol[r][c]] = -1
 
     if urow[r][c] != -1:
         if drow[r][c] != -1:
-            drow[urow[r][c]][c] = drow[r][c];
-            urow[drow[r][c]][c] = urow[r][c];
+            drow[urow[r][c]][c] = drow[r][c]
+            urow[drow[r][c]][c] = urow[r][c]
         else:
-            drow[urow[r][c]][c] = -1;
+            drow[urow[r][c]][c] = -1
 
     if rcol[r][c] != -1:
         if lcol[r][c] != -1:
-            lcol[r][rcol[r][c]] = lcol[r][c];
-            rcol[r][lcol[r][c]] = rcol[r][c];
+            lcol[r][rcol[r][c]] = lcol[r][c]
+            rcol[r][lcol[r][c]] = rcol[r][c]
         else:
-            lcol[r][rcol[r][c]] = -1;
+            lcol[r][rcol[r][c]] = -1
 
     if drow[r][c] != -1:
         if urow[r][c] != -1:
-            urow[drow[r][c]][c] = urow[r][c];
-            drow[urow[r][c]][c] = drow[r][c];
+            urow[drow[r][c]][c] = urow[r][c]
+            drow[urow[r][c]][c] = drow[r][c]
         else:
-            urow[drow[r][c]][c] = -1;
+            urow[drow[r][c]][c] = -1
 
 
 q = deque()
+
+def try_append(r, c):
+    if r != -1 and c != -1 and G[r][c] == 'x':
+        q.append((r, c))
+        G[r][c] = '.'
 
 for i in range(R):
     for j in range(C):
         if G[i][j] == 'x':
             components += 1
+            q = deque()
             q.append((i, j))
             while q:
                 r, c = q.popleft()
-                if G[r][c] == '.':
-                    continue
                 total += 1
-                G[r][c] = '.'
                 update_pointers(r, c)
-                if lcol[r][c] != -1: q.append((r, lcol[r][c]))
-                if urow[r][c] != -1: q.append((urow[r][c], c))
-                if rcol[r][c] != -1: q.append((r, rcol[r][c]))
-                if drow[r][c] != -1: q.append((drow[r][c], c))
+                try_append(r, lcol[r][c])
+                try_append(urow[r][c], c)
+                try_append(r, rcol[r][c])
+                try_append(drow[r][c], c)
 
 print(total - components)
