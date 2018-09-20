@@ -11,17 +11,6 @@ rm -f polarexpress.pdf
 rm -f thanos.pdf
 rm -f wiseguy.pdf
 
-verifyproblem beautifulprimes
-verifyproblem chocolates
-verifyproblem enigma
-verifyproblem limbo1
-verifyproblem limbo2
-verifyproblem mayhem
-verifyproblem piperotation
-verifyproblem polarexpress
-verifyproblem thanos
-verifyproblem wiseguy
-
 problem2pdf beautifulprimes
 problem2pdf chocolates
 problem2pdf enigma
