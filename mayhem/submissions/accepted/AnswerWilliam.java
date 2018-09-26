@@ -3,7 +3,7 @@ import java.util.*;
 public class AnswerWilliam {
     private static Scanner sc;
 
-    public static final int MAXR = 1005, MAXC = 1005;
+    public static final int MAXR = 2005, MAXC = 2005;
 
     public static int R, C, total = 0, components = 0;
     public static Character G[][] = new Character[MAXR][MAXC];
