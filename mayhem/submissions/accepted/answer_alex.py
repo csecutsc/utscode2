@@ -1,39 +1,37 @@
-#!/usr/bin/env python3
-
 from collections import deque
 
-R, C = map(int, input().split())
-G = [list(input().strip()) for _ in range(R)]
+R, C = map(int, raw_input().split())
+G = [list(raw_input().strip()) for _ in xrange(R)]
 
 total = 0
 components = 0
 
 # Initialize pointers.
-lcol = [[-1 for c in range(C)] for r in range(R)]
-rcol = [[-1 for c in range(C)] for r in range(R)]
-urow = [[-1 for c in range(C)] for r in range(R)]
-drow = [[-1 for c in range(C)] for r in range(R)]
+lcol = [[-1 for c in xrange(C)] for r in xrange(R)]
+rcol = [[-1 for c in xrange(C)] for r in xrange(R)]
+urow = [[-1 for c in xrange(C)] for r in xrange(R)]
+drow = [[-1 for c in xrange(C)] for r in xrange(R)]
 
-for i in range(R):
+for i in xrange(R):
     curr = -1
-    for j in range(C):
+    for j in xrange(C):
         if G[i][j] == 'x':
             lcol[i][j] = curr
             curr = j
     curr = -1
-    for j in range(C - 1, -1, -1):
+    for j in xrange(C - 1, -1, -1):
         if G[i][j] == 'x':
             rcol[i][j] = curr
             curr = j
 
-for j in range(C):
+for j in xrange(C):
     curr = -1
-    for i in range(R):
+    for i in xrange(R):
         if G[i][j] == 'x':
             urow[i][j] = curr
             curr = i
     curr = -1
-    for i in range(R - 1, -1, -1):
+    for i in xrange(R - 1, -1, -1):
         if G[i][j] == 'x':
             drow[i][j] = curr
             curr = i
@@ -76,8 +74,8 @@ def try_append(r, c):
         q.append((r, c))
         G[r][c] = '.'
 
-for i in range(R):
-    for j in range(C):
+for i in xrange(R):
+    for j in xrange(C):
         if G[i][j] == 'x':
             components += 1
             q = deque()
@@ -91,4 +89,4 @@ for i in range(R):
                 try_append(r, rcol[r][c])
                 try_append(drow[r][c], c)
 
-print(total - components)
+print total - components
