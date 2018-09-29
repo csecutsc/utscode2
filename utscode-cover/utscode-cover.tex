@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{varwidth}
+
+\graphicspath{ {./images/} }
+\usepackage[utf8]{inputenc}
+\renewcommand{\theenumi}{\Alph{enumi}}
+
+% make "C++" look pretty when used in text by touching up the plus signs
+\newcommand{\CPP}{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\tiny\bf +}\nolinebreak\hspace{-.10em}\raisebox{.4ex}{\tiny\bf +}}
+\def\CC{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
+
+
+
+
+\title{\includegraphics[scale=0.8]{logo}}
+\date{\today}
+
+
+
+
+\begin{document}
+
+\maketitle
+
+
+\begin{center}
+	Problems
+	\begin{center}
+		\begin{varwidth}{\textwidth}
+			\begin{enumerate}[label=\Alph*]
+				\item Beautiful Primes
+				\item Chocolates
+				\item Enigma
+				\item Limbo: Part 1
+				\item Limbo: Part 2
+				\item Mayhem
+				\item Pipe Rotation
+				\item Polar Express
+				\item Thanos
+				\item Wiseguy
+			\end{enumerate}
+		\end{varwidth}
+	\end{center}
+\end{center}
+\thispagestyle{empty}
+
+\newpage
+\thispagestyle{empty}
+
+
+\section*{Rules}
+
+\begin{enumerate}[label=\arabic*.]
+	\item There are \textbf{ten} problems to be completed in \textbf{5 hours}.
+	\item All questions require you to read the test data from standard input and write results to standard output. You cannot use files for input or output. Additional input and output specifications can be found in the General Information Sheet.
+	\item When displaying results, follow the format in the Sample Output for each problem. Unless otherwise stated, all whitespace in the Sample Output consists of exactly one blank character.
+	\item The allowed programming languages are C, \CPP, Java, Python2, and Python3. Python 2 is recommended, the PyPy compiler is available and make solutions significantly faster. 
+	\item All programs will be re-compiled prior to testing with the judges’ data.
+	\item	Non-standard libraries cannot be used in your solutions. The standard Template Library (STL) and \CPP \, string libraries are allowed. The standard Java API is available, expect for those packages that are deemed dangerous by contestant officials (e.g., that might generate a security violation).
+	\item	Programs will be run against multiple input files, each file containing one or several testcases. 
+	\item Programming style is not considered in this contest. You are free to code in whatever style you prefer. Documentation is not required.
+	\item	All communication with the judges will be handled by the Kattis environment.
+	\item Judges decisions are to be considered final. No cheating will be tolerated. 
+	
+\end{enumerate}
+
+
+\end{document}
