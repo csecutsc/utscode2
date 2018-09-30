@@ -1,30 +1,30 @@
 # UTSCode2
 
-This is the official repository for the UTSCode 2018 contest. This repository holds all the tools, problem statements written in LaTeX, and solutions written in Python3 or C++.
-
-## Problem Composition
-We're aiming for 10-11 problems for this contest, with the following categories:
-* 3 no-brainers with varying difficulty
-* 2 Dynamic Programming 
-* 1 Network Flow
-* 1 Greedy
-* 1 Interactive
-* 1 Math/Statistics related
-* 1 Graph Theory
-* (optional) 1 Binary Search/Math related
-
-## Current Roles/Tasks 
-See document here: https://docs.google.com/document/d/18LI4jaOwslHWBfpBN2zWVbUkADRhnumL7wZKf7m76Ds/edit?usp=sharing
-
-**Make sure** that when you're done writing a problem you have someone **proofread** it before the actual contest.
+This is the official repository for the UTSCode 2018 contest. This repository holds all the tools, problem statements written in LaTeX, and solutions written in Python, Java, or C++.
 
 
-## Installing
+# Requirements
+If you plan on making your own problems on the Kattis platform, then here are some 
+important links required for to compile the problemstatements from source and verify
+the validity your solutions against the current testdata.
 
-In order to run/test problems, Vagrant is required to sandbox Ubuntu 14.04.
+[Kattis problemtools](https://github.com/Kattis/problemtools)
 
+[Introduction to the Kattis Problem Format and problemtools](http://problemarchive.org/wiki/index.php/Introduction_to_the_Kattis_Problem_Format)
+
+[Indepth information on using the Kattis problemtools](http://problemarchive.org/wiki/index.php/Problem_Format)
+
+## Environment
+
+In order to run/test problems, an Ubuntu 14.04 sandbox has been package for Vagrant+Virtualbox.
+
+Linux
 ```
 $ sudo apt-get install virtualbox vagrant
+```
+Mac
+```
+$ brew install virtualbox vagrant
 ```
 
 From there, spin up a VM with the Vagrantfile by running:
@@ -42,5 +42,10 @@ $ vagrant ssh
 ```
 
 Problems will be under `utscode2` where you can run all Kattis [problemtools](https://github.com/Kattis/problemtools).
+
+## Official Contest
+[utscode.com](https://utscode.com/)
+
+
 
 
